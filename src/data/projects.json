@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Crypto Watch",
+    "imageSrc": "projects/project.png",
+    "description": "A responsive web app displaying cryptocurrency data, including price, market capital, trends, and price history, with search functionality.",
+    "skills": ["React", "CoinGecko API"],
+    "demo": "https://crypto-watch-mu.vercel.app/",
+    "source": "https://github.com/pawang001/Crypto-Watch"
+  },
+  {
+    "title": "Brain Stack",
+    "imageSrc": "projects/project.png",
+    "description": "A backend application that manages quiz data with CRUD operations and generates customized quizzes.",
+    "skills": ["Spring Boot","React", "MySQL"],
+    "demo": "https://github.com/pawang001/BrainStack-Backend",
+    "source": "https://github.com/pawang001/BrainStack-Backend"
+  },
+  {
+    "title": "Stream It",
+    "imageSrc": "projects/project.png",
+    "description": "A Netflix clone web application that enables users to discover, track, and manage their favorite movies and TV shows.",
+    "skills": ["React", "Firebase"],
+    "demo": "https://streamit-three.vercel.app/",
+    "source": "https://github.com/pawang001/STREAMIT"
+  },
+  {
+    "title": "Employee Management System",
+    "imageSrc": "projects/project.png",
+    "description": "A full-stack web application that allows users to manage employee data through CRUD operations.",
+    "skills": ["React", "Spring Boot", "MySQL", "Tailwind CSS"],
+    "demo": "https://github.com/pawang001/Employee-Management-System",
+    "source": "https://github.com/pawang001/Employee-Management-System"
+  }
+]
