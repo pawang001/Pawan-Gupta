@@ -1,36 +1,70 @@
-import React from "react";
-
+import React, { useState } from "react";
 import styles from "./Contact.module.css";
-import { getImageUrl } from "../../utils";
 
 export const Contact = () => {
+  const [status, setStatus] = useState("idle");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mjkyljwy", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setMessage("Your message has been sent successfully!");
+        e.target.reset();
+      } else {
+        setStatus("error");
+        setMessage("Something went wrong. Please try again later.");
+      }
+    } catch (err) {
+      setStatus("error");
+      setMessage("Network error. Please check your connection.");
+    }
+
+    setTimeout(() => {
+      setStatus("idle");
+      setMessage("");
+    }, 5000);
+  };
+
   return (
-    <footer id="contact" className={styles.container}>
-      <div className={styles.text}>
-      <p>Get in touch</p>
-        <h2>Contact Me</h2>
-      </div>
-      <ul className={styles.links}>
-        <li className={styles.link}>
-          <img src={getImageUrl("contact/emailIcon.png")} alt="Email icon" />
-          <a target="_blank" href="mailto:pawang1710@gmail.com">pawang1710@gmail.com</a>
-        </li>
-        <li className={styles.link}>
-          <img
-            src={getImageUrl("contact/linkedinIcon.png")}
-            alt="LinkedIn icon"
-          />
-          <a target="_blank" href="https://www.linkedin.com/in/pawan-gupta-72a1a622a">Linked In</a>
-        </li>
-        <li className={styles.link}>
-          <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" />
-          <a target="_blank" href="https://github.com/pawang001">Github</a>
-        </li>
-      </ul>
-      <p>
-      Made by Pawan Gupta (●'◡'●)
+    <section className={styles.contactSection} id="contact">
+      <h2 className={styles.title}>Contact Me</h2>
+      <p className={styles.subtitle}>
+        Let's connect — I'm open to collaboration, freelancing, or just a friendly chat!
       </p>
-    </footer>
+
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required />
+        <button type="submit" disabled={status === "loading"}>
+          {status === "loading" ? "Sending..." : "Send Message"}
+        </button>
+      </form>
+
+      {status !== "idle" && (
+        <div
+          className={`${styles.toast} ${
+            status === "success" ? styles.success : styles.error
+          }`}
+        >
+          {message}
+        </div>
+      )}
+    </section>
   );
 };
 

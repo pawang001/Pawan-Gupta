@@ -1,77 +1,130 @@
 @import "../../vars.css";
 
-.container {
-  color: var(--color-text);
-  margin-top: 120px;
-  background-color: var(--color-secondary);
+.contactSection {
+  padding: 80px 20px;
+  background: var(--color-bg);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding: 20px 10%;
-  gap: 10px;
   align-items: center;
+  color: var(--color-text);
 }
 
-.text h2 {
-  font-size: 70px;
+.title {
+  font-size: 2.8rem;
   font-weight: 700;
-  letter-spacing: 4px;
+  margin-bottom: 10px;
   text-align: center;
+  color: var(--color-primary);
 }
 
-.text p {
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: 2px;
+.subtitle {
+  font-size: 1.2rem;
   text-align: center;
+  max-width: 600px;
+  margin-bottom: 40px;
+  color: var(--color-text);
+  opacity: 0.85;
 }
 
-.links {
+.form {
+  width: 100%;
+  max-width: 600px;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  list-style: none;
-  gap: 26px;
-  margin-bottom: 20px;
-}
-
-.link {
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 20px;
 }
 
-.link a {
+input,
+textarea {
+  padding: 15px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.04);
   color: var(--color-text);
-  text-decoration: none;
-  font-size: 25px;
-  font-weight: 400;
-  letter-spacing: 1.5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
 }
 
-@media screen and (max-width: 830px) {
-  .container {
-    flex-direction: column;
-    gap: 23px;
+input:focus,
+textarea:focus {
+  border: 1px solid var(--color-primary);
+}
+
+button {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1585c9;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.2rem;
   }
 
-  .text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
   }
 
-  .text h2{
-    font-size: 50px;
+  input,
+  textarea {
+    font-size: 0.95rem;
   }
 
-  .text p{
-    font-size: 25px;
+  button {
+    font-size: 0.95rem;
   }
+}
 
-  .links {
-    align-items: center;
-    flex-direction: column;
+
+.toast {
+  margin-top: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  animation: fadeInOut 5s ease-in-out forwards;
+  max-width: 500px;
+  width: 100%;
+}
+
+.success {
+  background-color: rgba(0, 128, 0, 0.15);
+  color: #4caf50;
+  border: 1px solid #4caf50;
+}
+
+.error {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #ff4c4c;
+  border: 1px solid #ff4c4c;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
   }
 }
