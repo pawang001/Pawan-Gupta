@@ -1,0 +1,56 @@
+@import "../../vars.css";
+
+.footer {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 30px 10%;
+  text-align: center;
+  font-family: var(--font-robot);
+  margin-top: 35px;
+  position: relative;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.socials a {
+  color: var(--color-text);
+  font-size: 32px;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+  color: var(--color-primary);
+}
+
+.tagline {
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.8;
+  margin-top: 10px;
+  color: var(--color-muted);
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 5%;
+  }
+
+  .socials a {
+    font-size: 28px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+}
