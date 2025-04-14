@@ -5,7 +5,12 @@
   margin: 60px auto;
   padding: 0 20px;
   color: var(--color-text);
-  align-items: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .heading {
@@ -13,28 +18,39 @@
   font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 40px;
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
   margin-bottom: 60px;
   justify-content: center;
 }
 
 .imageSection {
   flex-shrink: 0;
+  animation: fadeLeft 1s ease;
+}
+
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .profileImg {
-  width: 200px;
-  height: 240px;
+  width: 220px;
+  height: 260px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profileImg:hover {
+  transform: scale(1.05);
 }
 
 .textSection {
@@ -42,28 +58,35 @@
   font-size: 1.1rem;
   line-height: 1.7;
   text-align: center;
+  animation: fadeRight 1s ease;
+}
+
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 30px;
   justify-content: center;
 }
 
 .skillCard {
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 25px;
   width: 300px;
   text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 .skillCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .skillCard h3 {
@@ -77,6 +100,19 @@
   line-height: 1.5;
 }
 
+.linkBtn {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.linkBtn:hover {
+  color: var(--color-primary);
+}
+
 @media (min-width: 768px) {
   .container {
     flex-direction: row;
@@ -86,4 +122,23 @@
   .textSection {
     text-align: left;
   }
+}
+
+/* Add this inside About.module.css */
+
+.linkBtn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 16px;
+  background-color: var(--color-bg);
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 500; 
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.linkBtn:hover {
+  background-color: var(--color-dark);
+  transform: translateY(-2px);
 }

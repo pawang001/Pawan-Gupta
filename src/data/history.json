@@ -4,7 +4,10 @@
     "organisation": "Bajaj Auto Ltd.",
     "startDate": "Feb, 2021",
     "endDate": "Aug 2023",
-    "experiences": ["Worked on Triumph Speed 400 & Triumph Scrambler 400X, collaborating with Design and Testing teams to enhance robustness and resolve critical issues."],
+    "experiences": ["Tracked and analyzed design-related issues to enhance product reliability and performance.", 
+    "Conducted Design Failure Mode and Effects Analysis (DFMEA) to identify and mitigate potential risks in early stages.",
+    "Collaborated with cross-functional teams to implement corrective actions and improve overall Design Quality.",
+    "Contributed to the development of Triumph Speed 400 and Triumph Scrambler 400X models."],
     "imageSrc": "history/bajaj.svg"
   }
 ]
