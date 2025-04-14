@@ -1,7 +1,7 @@
 [
   {
     "title": "Crypto Watch",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/crypto.png",
     "description": "A responsive web app displaying cryptocurrency data, including price, market capital, trends, and price history, with search functionality.",
     "skills": ["React", "CoinGecko API"],
     "demo": "https://crypto-watch-mu.vercel.app/",
@@ -17,7 +17,7 @@
   },
   {
     "title": "Stream It",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/stream.png",
     "description": "A Netflix clone web application that enables users to discover, track, and manage their favorite movies and TV shows.",
     "skills": ["React", "Firebase"],
     "demo": "https://streamit-three.vercel.app/",

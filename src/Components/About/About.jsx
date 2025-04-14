@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./About.module.css";
 import { getImageUrl } from "../../utils";
+import { Link } from "react-router-dom";
 
 export const About = () => {
   return (
@@ -10,7 +11,7 @@ export const About = () => {
       <div className={styles.container}>
         <div className={styles.imageSection}>
           <img
-            src={getImageUrl("about/aboutImage.png")}
+            src={getImageUrl("about/aboutImage.webp")}
             alt="Pawan Gupta"
             className={styles.profileImg}
           />
@@ -30,15 +31,17 @@ export const About = () => {
       <div className={styles.skills}>
         <div className={styles.skillCard}>
           <h3>Full Stack Development</h3>
-          <p>Building modern, scalable apps using React, Tailwind CSS, Spring Boot, and RESTful APIs.</p>
+          <p>Crafting responsive, full-featured applications using React, Tailwind, Spring Boot, and RESTful APIs.</p>
+          <Link to="/projects" className={styles.linkBtn}>Explore Projects</Link>
         </div>
         <div className={styles.skillCard}>
-          <h3>Data Structures & Algorithms</h3>
-          <p>Strong command in DSA with 300+ problems solved on LeetCode and GFG.</p>
+          <h3>DSA Enthusiast</h3>
+          <p>Sharpened my problem-solving skills by solving 300+ questions on LeetCode and GFG.</p>
+          <Link to="/stats" className={styles.linkBtn}>View My Stats</Link>
         </div>
         <div className={styles.skillCard}>
-          <h3>Team Player & Learner</h3>
-          <p>Always eager to learn, collaborate, and contribute to innovative projects that make an impact.</p>
+          <h3>Collaborative Learner</h3>
+          <p>I thrive in team environments and enjoy taking on new challenges to grow and contribute.</p>
         </div>
       </div>
     </section>

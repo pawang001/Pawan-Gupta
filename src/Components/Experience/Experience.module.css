@@ -2,120 +2,134 @@
 
 .container {
   color: var(--color-text);
-  margin-top: 79px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-top: 50px;
+  padding: 0 10%;
 }
 
 .title {
-  color: var(--color-text);
-  font-size: 35px;
+  text-align: center;
+  font-size: 2.5rem;
   font-weight: 700;
-  letter-spacing: 1.75px;
-  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.subTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: var(--color-primary);
+}
+
+.grid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.skillsSection,
+.timelineSection {
+  flex: 1;
+  min-width: 300px;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: flex-start;
+}
+
+.skillCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 120px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skillCard img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.skillCard p {
+  font-size: 0.95rem;
+  font-weight: 500;
   text-align: center;
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 20px;
-}
-
-.skills {
-  width: 45%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 37px;
-}
-
-.skill {
+.timeline {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 11px;
+  gap: 30px;
 }
 
-.skillImageContainer {
-  background-color: var(--color-secondary);
-  border-radius: 100%;
+.timelineItem {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 120px;
-}
-
-.skillImageContainer img {
-  width: 75px;
-}
-
-.skill p {
-  font-size: 25px;
-  font-family: var(--font-roboto);
-  font-weight: 500;
-}
-
-.history {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  justify-content: center;
-}
-
-.historyItem {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 17px;
-  background: #19376d;
-  background: linear-gradient(90deg, #19376d 0%, rgba(25, 55, 109, 0) 100%);
+  gap: 15px;
+  background: linear-gradient(90deg, #1e1e2f 0%, rgba(30, 30, 47, 0) 100%);
+  padding: 20px;
   border-radius: 10px;
-  padding: 24px;
+  align-items: flex-start;
+  transition: background 0.3s ease;
 }
 
-.historyItem img {
+.timelineItem:hover {
+  background: linear-gradient(90deg, #2b2b4a 0%, rgba(43, 43, 74, 0) 100%);
+}
+
+.timelineIcon img {
   width: 50px;
+  height: 50px;
 }
 
-.historyItemDetails {
-  font-family: var(--font-roboto);
+.timelineContent h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
-.historyItemDetails h3 {
-  font-size: 25px;
-  font-weight: 500;
+.timelineContent span {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 10px;
+  display: block;
 }
 
-.historyItemDetails p {
-  font-size: 22px;
-  font-weight: 300;
+.timelineContent ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-.historyItemDetails ul {
-  margin-top: 6px;
-  list-style-position: inside;
-  font-size: 20px;
-  list-style: none;
-}
-
-@media screen and (max-width: 830px) {
-  .content {
+@media (max-width: 768px) {
+  .grid {
     flex-direction: column;
-    align-items: center;
-    gap: 34px;
   }
 
-  .skills {
-    width: 100%;
-    flex-direction: row;
+  .skillsGrid {
     justify-content: center;
   }
 
-  .history {
-    width: 100%;
-    gap: 9px;
+  .timelineItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timelineIcon img {
+    width: 45px;
+    height: 45px;
   }
 }
